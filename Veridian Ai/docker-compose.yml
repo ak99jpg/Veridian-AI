@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  veridian-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=info
+    volumes:
+      - ./app:/app/app
+    restart: unless-stopped
